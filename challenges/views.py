@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 
 monthly_challenges = {
@@ -18,8 +18,15 @@ monthly_challenges = {
 }
 # Create your views here.
 
+
+# allows give as parameter pure number instead of name of the month in url statament
 def monthly_challenge_by_number(request, month):
-    return HttpResponse(month)
+    months = list(monthly_challenges.keys())
+    redirect_month = months[month - 1]
+    try:
+        return HttpResponseRedirect('/challenges/' + redirect_month)
+    except:
+        return HttpResponseNotFound('Page not found!')
 
 def monthly_challenge(request, month):
     try:

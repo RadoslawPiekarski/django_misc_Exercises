@@ -28,3 +28,4 @@ def monthly_challenge(request, month):
     except:
         return HttpResponseNotFound('This month is not supported!')
 
+

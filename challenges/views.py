@@ -18,15 +18,6 @@ monthly_challenges = {
 }
 # Create your views here.
 
-# def index(request):
-#     months = list(monthly_challenges.keys())
-#     links = ""
-
-    # for month in months:
-    #     month_url = reverse('month-challenge', args=[month])
-    #     links = links + f"<a href='{month_url}'>{month}</a></br>"
-    #
-    # return HttpResponse(links)
 
 def index(request):
     list_items = ""

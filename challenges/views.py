@@ -30,7 +30,7 @@ def index(request):
         capitalized_month = month.capitalize()
         list_items += f'<li><a href="{month_path}">{capitalized_month}</a></li>'
     response_data = f"<ul>{list_items}</ul>"
-    return HttpResponse(response_data)
+    return render(request, 'challenges/index.html', {"months": months})
 
 
 # allows give as parameter pure number instead of name of the month in url statament

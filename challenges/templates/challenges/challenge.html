@@ -5,7 +5,11 @@
     <title>{{ month_name|capfirst }} challenge</title>
 </head>
 <body>
-    <h1>This {{ month_name|capfirst }} Challenge</h1>
-    <h2>{{ text }}</h2>
+    {% if text != None %}
+        <h1>This {{ month_name|capfirst }} Challenge</h1>
+        <h2>{{ text }}</h2>
+    {% elif True %}
+        <h2>There is not a challenge for {{ month_name|capfirst }}</h2>
+    {% endif %}
 </body>
 </html>

@@ -14,7 +14,7 @@ monthly_challenges = {
     'september': 'Learn Django at least 15 minutes every day',
     'october': 'Eat more protein entire month',
     'november': 'Sleep at least 7h every day',
-    'december': 'Learn Django at least 15 minutes every day',
+    'december': None,
 }
 
 
@@ -45,4 +45,4 @@ def monthly_challenge(request, month):
             'month_name': month,
         })
     except:
-        return HttpResponseNotFound('This month is not supported!')
+        return HttpResponseNotFound('Error! Something was wrong!')

@@ -8,7 +8,7 @@
     {% if text != None %}
         <h1>This {{ month_name|capfirst }} Challenge</h1>
         <h2>{{ text }}</h2>
-    {% elif True %}
+    {% else %}
         <h2>There is not a challenge for {{ month_name|capfirst }}</h2>
     {% endif %}
 </body>

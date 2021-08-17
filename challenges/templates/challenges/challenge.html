@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ month_name|capfirst }} challenge</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block page_title %}
+    {{ month_name|capfirst }} challenge
+{% endblock %}
+
+{% block content %}
     {% if text != None %}
         <h1>This {{ month_name|capfirst }} Challenge</h1>
         <h2>{{ text }}</h2>
     {% else %}
         <h2>There is not a challenge for {{ month_name|capfirst }}</h2>
     {% endif %}
-</body>
-</html>
+{% endblock %}

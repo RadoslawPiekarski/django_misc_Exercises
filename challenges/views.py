@@ -28,10 +28,11 @@ def index(request):
 
 # allows give as parameter pure number instead of name of the month in url statament
 def monthly_challenge_by_number(request, month):
-    months = list(monthly_challenges.keys())
-    redirect_month = months[month - 1]
-    redirect_path = reverse('month-challenge', args=[redirect_month])
+
     try:
+        months = list(monthly_challenges.keys())
+        redirect_month = months[month - 1]
+        redirect_path = reverse('month-challenge', args=[redirect_month])
         return HttpResponseRedirect(redirect_path)
     except:
         raise Http404()
@@ -45,4 +46,4 @@ def monthly_challenge(request, month):
             'month_name': month,
         })
     except:
-        raise Http404()
+        return HttpResponseNotFound('Error! Something was wrong!')

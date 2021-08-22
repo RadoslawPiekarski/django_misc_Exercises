@@ -30,10 +30,10 @@ li:nth-of-type(6) {
 
 li a {
     text-decoration: none;
-    color: #383838;
+    color: #1c2cc7;
 }
 
 li a:hover,
 li a:active {
-    color: #5c17ff
+    color: #1f0657
 }
